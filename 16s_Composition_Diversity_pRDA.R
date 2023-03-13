@@ -86,7 +86,7 @@ red.taxon
 
 ## Match asv table with new taxonomy file
 asv.filt<-asv[,which(colnames(asv) %in% rownames(red.taxon))]
-asv.filt ## just looking at what comes up
+asv.filt 
 
 ## Calculate reads per sample
 rowSums(asv.filt) ## 2, 23, 31, 32, 89, 105, 106, 107 have no samples
