@@ -1,3 +1,4 @@
+### Meredith Persico: mxp1191@psu.edu
 ## Code for: "The age of absorptive roots impacts root-adjacent microbial composition in grapevines"
 ### This code covers 16s beta composition, alpha diversity, and partial RDA
 
