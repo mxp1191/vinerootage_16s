@@ -1,4 +1,4 @@
-### Meredith Persico: mxp1191@psu.edu
+## Meredith Persico: mxp1191@psu.edu
 ## Code for: "The age of absorptive roots impacts root-adjacent microbial composition in grapevines"
 ### This code covers 16s beta composition, alpha diversity, and partial RDA
 
@@ -86,7 +86,7 @@ red.taxon
 
 ## Match asv table with new taxonomy file
 asv.filt<-asv[,which(colnames(asv) %in% rownames(red.taxon))]
-asv.filt 
+asv.filt ## just looking at what comes up
 
 ## Calculate reads per sample
 rowSums(asv.filt) ## 2, 23, 31, 32, 89, 105, 106, 107 have no samples
@@ -303,11 +303,11 @@ richtable.phy <-cbind(meta.phy,rich.phy)
 qqnorm(richtable.phy$Observed, pch = 1, frame = FALSE)
 qqline(richtable.phy$Observed, col = "steelblue", lwd = 2)
 
-## shannon diversity qq plot (basically normally distributed)
+## shannon diversity qq plot ()
 qqnorm(richtable.phy$Shannon, pch = 1, frame = FALSE)
 qqline(richtable.phy$Shannon, col = "steelblue", lwd = 2)
 
-anova.obs.phy <-aov(rich.phy$Observed~phylum_data2@sam_data$YoungvsOld) ## phylum-level but not sure I can do that at this level
+anova.obs.phy <-aov(rich.phy$Observed~phylum_data2@sam_data$YoungvsOld) 
 summary(anova.obs.phy)
 
 anova.shan.phy <-aov(rich.phy$Shannon~phylum_data@sam_data$YoungvsOld)
@@ -318,15 +318,15 @@ rich.class = estimate_richness(class_data2, measures=c("Observed", "Shannon"))
 meta.class <-as.data.frame(class_data2@sam_data)
 richtable.class <-cbind(meta.class,rich.class)
 
-## observed species qq plot, not great looking - not sure I can do at phylum level
+## observed species qq plot
 qqnorm(richtable.class$Observed, pch = 1, frame = FALSE)
 qqline(richtable.class$Observed, col = "steelblue", lwd = 2)
 
-## shannon diversity qq plot (basically normally distributed)
+## shannon diversity qq plot 
 qqnorm(richtable.class$Shannon, pch = 1, frame = FALSE)
 qqline(richtable.class$Shannon, col = "steelblue", lwd = 2)
 
-anova.obs.class <-aov(rich.class$Observed~class_data2@sam_data$YoungvsOld) ## phylum-level but not sure I can do that at this level
+anova.obs.class <-aov(rich.class$Observed~class_data2@sam_data$YoungvsOld) 
 summary(anova.obs.class)
 
 anova.shan.class <-aov(rich.class$Shannon~class_data2@sam_data$YoungvsOld)
